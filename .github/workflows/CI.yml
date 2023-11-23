@@ -53,4 +53,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: userscript
-          path: dist/dist/mb-google-links.user.js
+          path: dist/mb-google-links.user.js
