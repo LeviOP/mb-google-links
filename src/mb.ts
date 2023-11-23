@@ -63,6 +63,7 @@ async function getEntitiesFromURL(id: string) {
     const url = await fetchURL(id);
     const entities = await Promise.all(url.relations.map<Promise<MBEntity>>(async (relationship) => {
         const type = relationship["target-type"];
+        // @ts-expect-error haven't imported correct type defintions for musicbrainz api
         const id = relationship[type].id;
         if (type === "release") {
             const releaseGroup = await getReleaseGroupFromRelease(id);
